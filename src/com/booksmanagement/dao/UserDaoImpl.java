@@ -13,7 +13,6 @@ public class UserDaoImpl implements IUserDao {
 	public void setSession(SessionFactory session) {
 		this.session = session;
 	}
-
 	@Override
 	public void insertUser(User user) {
 		// TODO Auto-generated method stub

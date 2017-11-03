@@ -4,18 +4,10 @@
 	"http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
 	<package name="default" extends="struts-default">
-	
-	<action name="register" class="com.booksmanagement.actions.registers">
+	<action name="register" class="usersAction">
 			<result>/index.jsp</result>
-			<result name="re">/user/register.jsp</result>
-			<result name="r">/user/login.jsp</result>
-		</action> 
-		
-		<action name="manager" class="com.booksmanagement.actions.UserAction">
-			<result>/index.jsp</result>
+			<result name="register">/user/register.jsp</result>
 			<result name="login">/user/login.jsp</result>
-			<result name="register">/user/login.jsp</result>
-		</action>
-		
+		</action> 
 	</package>
 </struts>

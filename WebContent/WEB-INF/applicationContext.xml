@@ -34,6 +34,11 @@
 			</props>
 		</property>
 	</bean>
+	
+	<!-- 注册Action -->
+	<bean id="usersAction" class="com.booksmanagement.actions.UserAction" scope="prototype">
+		<property name="service" ref="userService"></property>
+	</bean>
 	<!-- 注册Dao -->
 	<bean id="userDao" class="com.booksmanagement.dao.UserDaoImpl">
 		<property name="session" ref="sessionFactory"></property>
@@ -42,5 +47,21 @@
 	<bean id="userService" class="com.booksmanagement.service.UserServiceImpl">
 		<property name="dao" ref="userDao"></property>
 	</bean>
-
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* *..service.*(..))" id="pointcut"/>
+		<aop:advisor advice-ref="advice" pointcut-ref="pointcut"/>
+	</aop:config>
+	<tx:advice id="advice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" isolation="DEFAULT" propagation="REQUIRED"/>
+			<tx:method name="del*" isolation="DEFAULT" propagation="REQUIRED"/>
+			<tx:method name="find*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
+			<tx:method name="modify*" isolation="DEFAULT" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
 </beans>
