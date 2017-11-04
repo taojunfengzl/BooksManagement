@@ -3,19 +3,15 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-11-4 16:13:05 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.booksmanagement.beans.User" table="USER">
+    <class name="com.booksmanagement.beans.Book">
         <id name="id" type="java.lang.Integer">
-            <column name="ID" />
             <generator class="assigned" />
         </id>
-        <property name="name" type="java.lang.String">
-            <column name="NAME" />
+        <property name="bookName" type="java.lang.String">
         </property>
-        <property name="pwd" type="java.lang.String">
-            <column name="PWD" />
+        <property name="ISBN" type="java.lang.String">
         </property>
-        <property name="level" type="int">
-            <column name="LEVEL" />
-        </property>
+        <many-to-one name="author" class="com.booksmanagement.beans.Author" fetch="join">
+        </many-to-one>
     </class>
 </hibernate-mapping>
