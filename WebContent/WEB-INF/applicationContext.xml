@@ -39,6 +39,9 @@
 	<bean id="usersAction" class="com.booksmanagement.actions.UserAction" scope="prototype">
 		<property name="service" ref="userService"></property>
 	</bean>
+	<bean id="loginAction" class="com.booksmanagement.actions.loginActions" scope="prototype">
+		<property name="service" ref="userService"></property>
+	</bean>
 	<!-- 注册Dao -->
 	<bean id="userDao" class="com.booksmanagement.dao.UserDaoImpl">
 		<property name="session" ref="sessionFactory"></property>

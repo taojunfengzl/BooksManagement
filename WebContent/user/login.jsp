@@ -9,8 +9,8 @@
 <body>
 <h1>管理员登录：</h1>
 	<form action="login.action" method="post">
-	用户名: <input type="text" name="name" /><br />
-	密码：<input type="password" name="pwd" /><br />
+	用户名: <input type="text" name="user.name" /><br />
+	密码：<input type="password" name="user.pwd" /><br />
 	<input type="submit" value="登录" />
 	</form>
 </body>

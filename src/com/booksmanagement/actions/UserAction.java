@@ -9,8 +9,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport{
 	
-	protected IUserService service;
-	protected User user;
+	private IUserService service;
+	private User user;
 	
 	public User getUser() {
 		return user;

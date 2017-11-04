@@ -8,6 +8,10 @@
 			<result>/index.jsp</result>
 			<result name="register">/user/register.jsp</result>
 			<result name="login">/user/login.jsp</result>
+		</action>
+		<action name="login" class="loginAction">
+			<result>/index.jsp</result>
+			<result name="login">/user/login.jsp</result>
 		</action> 
 	</package>
 </struts>

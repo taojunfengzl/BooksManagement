@@ -42,4 +42,10 @@ public class UserServiceImpl implements IUserService {
 		return dao.findUserById(id);
 	}
 
+	@Override
+	public List<User> findUserByName(User user) {
+		// TODO Auto-generated method stub
+		return dao.findUserByName(user);
+	}
+
 }

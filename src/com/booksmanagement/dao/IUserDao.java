@@ -12,6 +12,7 @@ public interface IUserDao {
 	void updateUser(User user);
 	List<User> findAllUser();
 	User findUserById(int id);
+	List<User> findUserByName(User user);
 
 	
 

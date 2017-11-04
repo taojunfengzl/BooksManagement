@@ -43,5 +43,13 @@ public class UserDaoImpl implements IUserDao {
 		// TODO Auto-generated method stub
 		return session.getCurrentSession().load(User.class, id);
 	}
+	
+	@Override
+	public List<User> findUserByName(User user){
+		// TODO Auto-generated method stub
+		String hql="from User where name=? and pwd=?";
+		return session.getCurrentSession().createQuery(hql, User.class).setString(0, user.getName()).setString(1, user.getPwd()).list();
+
+	}
 
 }
